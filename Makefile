@@ -1,3 +1,7 @@
 dualkeyboards: alterkeys.c
 	gcc -Wall -o alterkeys alterkeys.c -framework ApplicationServices
-	osascript assistive-enabled.scpt
+
+install: dualkeyboards
+	cp alterkeys /usr/bin/
+	cp com.dualkeyboards.startup.plist /Library/LaunchDaemons
+
